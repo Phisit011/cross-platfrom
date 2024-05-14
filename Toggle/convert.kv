@@ -1,0 +1,51 @@
+<UI>:
+    Screen1:
+    Screen2:
+    
+<Screen2>:
+    name:"Screen2"
+
+    BoxLayout:
+        orientation: 'vertical'
+        GridLayout:
+            cols: 1
+            TextInput:
+                id:txt_number
+                font_size: 30
+            BoxLayout:
+                ToggleButton:
+                    text: 'base2'
+                    group: 'convert_mode'
+                    on_press:root.convert(*args)
+                ToggleButton:
+                    text: 'base8'
+                    group: 'convert_mode'
+                    on_press:root.convert(*args)
+                ToggleButton:
+                    text: 'base10'
+                    group: 'convert_mode'
+                    on_press:root.convert(*args)
+            Label:
+                id:lbl_output
+                text:
+
+##################################################
+
+<Screen1>:
+    name: "Screen1"
+    canvas.before:
+        Rectangle: 
+            source:"bmi.jpg"
+            size: root.width, root.height
+            pos: self.pos
+    Button:
+        text: 'แปลงเลขฐาน'
+        pos_hint: {'x': 0.25, 'y': 0.6}
+        size_hint: (0.5, None)
+        height: 30
+        font_size: 25
+        font_name: 'tahoma'
+        on_press: app.root.current ="Screen2"
+
+    
+                
