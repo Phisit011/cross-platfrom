@@ -1,0 +1,35 @@
+<UI>:
+    id:scr_manager
+    MainScreen:
+    LoginScreen:
+    
+<LoginScreen>:
+    name: "Login_scr"
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: txt_weight
+            font_size: 50
+            size_hint: (1,0.35)
+        TextInput:
+            id: txt_height
+            font_size: 50
+            size_hint: (1,0.35)
+        GridLayout:
+            cols: 1
+            Button:
+                id:btn_bmi
+            Label:
+                id:lbl_bmi
+                text:"bmi ="
+<MainScreen>:
+    name: "Main_scr"
+    BoxLayout:
+        orientation: 'vertical'
+        Image:
+            source:"1.jpg"
+        Button:
+            pos_hint: {'x': 0.37 , 'y': 0.80 }
+            size_hint: 0.25,0.15
+            text:"Login"
+            on_press: app.root.current ="Login_scr"
